@@ -8,6 +8,20 @@ mkdir grading-area
 git clone $1 student-submission
 echo 'Finished cloning'
 
+if [[-e ./list-examples-grader/student-submission ]]
+    then
+        echo "File exists!"
+        exit 1
+    else 
+        echo "File doesn't exist!"
+fi
+
+cp ListExamples.java ListTests.java ~/OneDrive/Documents/GitHub/list-examples-grader/grading-area
+
+javac ListExamples.java ListTests.java
+java ListTests
+
+
 
 # Draw a picture/take notes on the directory structure that's set up after
 # getting to this point
