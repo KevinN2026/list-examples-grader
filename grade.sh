@@ -27,10 +27,10 @@ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUn
 
 head -n 2 TestResult.txt > firstFile.txt
 tail -n 1 firstFile.txt > secondFile.txt
-Pass = `grep -c "." secondFile.txt`
-Fail = `grep -c "E" secondFile.txt`
-Total = $(($Pass + $Fail))
-echo "Your score: " $Pass / $Total
+PASS=`grep -c "." secondFile.txt`
+FAIL=`grep -c "E" secondFile.txt`
+TOTAL=$(($PASS + $FAIL))
+echo "Your grade: " $PASS / $TOTAL
 
 
 # Draw a picture/take notes on the directory structure that's set up after
